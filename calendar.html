@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.min.css" />
+    <link rel="stylesheet" href="assets/css/fullcalendar.print.css" media='print' />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+</head>
+
+<body data-type="widgets">
+    <script src="assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                    </span>
+                </div>
+        </header>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 用户信息 -->
+            <div class="tpl-sidebar-user-panel">
+                <div class="tpl-user-panel-slide-toggleable">
+                    <div class="tpl-user-panel-profile-picture">
+                        <img src="assets/img/user04.png" alt="">
+                    </div>
+                    <span class="user-panel-logged-in-text">
+                        <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+                        禁言小张
+                    </span>
+                    <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span>
+                        账号设置</a>
+                </div>
+            </div>
+
+
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-link">
+                    <a href="index.html">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首頁
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="tables.html">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>訂房系統
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="calendar.html"  class="active">
+                        <i class="am-icon-calendar sidebar-nav-link-logo"></i> 訂房排程
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="keyInfo.html">
+                        <i class="am-icon-key sidebar-nav-link-logo"></i> 門鎖資料
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+       
+            <label  style="color:#FDEBD0" id="roomType_1">房間 1 顏色</label>
+            <label  style="color:#BFC9CA" id="roomType_2">\房間 2 顏色</label>
+            <label  style="color:#D7BDE2" id="roomType_3">\房間 3 顏色</label>
+            <label  style="color:#D1F2EB" id="roomType_4">\房間 4 顏色</label>
+
+            <div class="row-content am-cf">
+                <div class="tpl-calendar-box">
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- 弹出层 -->
+
+    <div class="am-modal am-modal-no-btn" id="calendar-edit-box">
+        <div class="am-modal-dialog tpl-model-dialog">
+            <div class="am-modal-hd">
+                <a href="javascript: void(0)" class="am-close edit-box-close am-close-spin"
+                    data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd tpl-am-model-bd am-cf">
+
+                <form class="am-form tpl-form-border-form">
+                    <div class="am-form-group am-u-sm-12">
+                        <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">訂房資訊 <span
+                                class="tpl-form-line-small-title">Information</span></label>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">訂單編號</label>
+                            <input type="text" class="tpl-form-input am-margin-top-xs calendar-edit-box-title"
+                                id="user-name" placeholder="" disabled>
+                        </div>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">入住時間</label>
+                            <input type="text" class="tpl-form-input am-margin-top-xs calendar-edit-box-date"
+                                id="user-name" placeholder="" disabled>
+                        </div>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">人數</label>
+                            <input type="text" class="tpl-form-input am-margin-top-xs calendar-edit-box-people"
+                                id="user-name" placeholder="" disabled>
+                        </div>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">入住房間</label>
+                            <input type="text" class="tpl-form-input am-margin-top-xs calendar-edit-box-room"
+                                id="user-name" placeholder="" disabled>
+                        </div>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">金額</label>
+                            <input type="text" class="tpl-form-input am-margin-top-xs calendar-edit-box-cost"
+                                id="user-name" placeholder="" disabled>
+                        </div>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">付款</label>
+                            <input type="checkbox" class="tpl-form-input am-margin-top-xs calendar-check-box-paid"
+                                placeholder="" disabled>
+                        </div>
+                        <div class="am-u-sm-12">
+                            <label style="color:white">說明</label>
+                            <input type="text" class="tpl-form-input am-margin-top-xs calendar-edit-box-explain"
+                                id="user-name" placeholder="" disabled>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/moment.js"></script>
+    <script src="http://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="assets/js/fullcalendar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/housekeeperService.js"></script>
+    <script src="assets/js/orderMgr.js"></script>
+    <script>
+        const RoomColor = {
+            [1]: "#FDEBD0",
+            [2]: "#BFC9CA",
+            [3]: "#D7BDE2",
+            [4]: "#D1F2EB"
+        }
+
+        $(document).ready(function ()
+        {
+            var editBox = $('#calendar-edit-box');
+
+            $('.edit-box-close').on('click', function ()
+            {
+                $('#calendar').fullCalendar('unselect');
+            })
+            $('#calendar').fullCalendar({
+
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+
+                monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                monthNamesShort: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+                dayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+                dayNamesShort: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+                today: ["今天"],
+                firstDay: 1,
+                buttonText: {
+                    today: '本月',
+                    month: '月',
+                    week: '周',
+                    day: '日',
+                    prev: '上一月',
+                    next: '下一月'
+                },
+                defaultDate: new Date(),
+                lang: 'zh-cn',
+                navLinks: true, // can click day/week names to navigate views
+                selectable: true,
+                selectHelper: true,
+                handleWindowResize: true,
+                windowResize: function (view)
+                {
+
+                },
+
+                editable: false,
+                eventLimit: false, 
+                eventClick: function (event, jsEvent, view)
+                {
+
+                    $('.calendar-edit-box-title').val(event.orderInfo.OrderId)
+                    $('.calendar-edit-box-explain').val(event.orderInfo.RoomExplain)
+                    $('.calendar-check-box-paid')[0].checked = event.orderInfo.Paid
+                    $('.calendar-edit-box-cost').val(`NT: ${event.orderInfo.Cost}`)
+                    $('.calendar-edit-box-room').val(`${event.orderInfo.RoomType} 號房`)
+                    $('.calendar-edit-box-people').val(`${event.orderInfo.NumberOfPeople} 人`)
+                    $('.calendar-edit-box-date').val(`${event.orderInfo.CheckInData} ~ ${event.orderInfo.CheckOutData}`)
+                    //  弹出框
+                    editBox.modal();
+
+                },
+            });
+            let serviceMgr = new HousekeeperService()
+            if (!serviceMgr.isLogin())
+            {
+                //User沒有登入
+                window.location.href = "login.html";
+            }
+            serviceMgr.openWebsocket((event, msg) =>
+            {
+                console.log("websocket Handle", event, msg);
+                switch (event)
+                {
+                    case WEBSOCKET_EVENT.ON_CLOSE:
+                        serviceMgr.logout();
+                        break;
+                    case WEBSOCKET_EVENT.ON_MESSAGE:
+                        {
+                            let subSocketData = JSON.parse(msg.data);
+                            console.log(subSocketData)
+                            switch (subSocketData.event)
+                            {
+                                case WEBSOCKET_SUB_EVENT.ORDER_INFO:
+                                    //取得訂單資訊
+                                    console.log("order", subSocketData.content);
+                                    for (const [key, value] of Object.entries(subSocketData.content))
+                                    {
+                                        eventData = {
+                                            title: value.RoomExplain,
+                                            start: value.CheckInData,
+                                            end: value.CheckOutData,
+                                            color: RoomColor[value.RoomType],
+                                            orderInfo: value,
+                                            textColor: 'black'
+                                        };
+                                        $('#calendar').fullCalendar('renderEvent', eventData, true);
+                                    }
+
+                            }
+                        }
+
+                       
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

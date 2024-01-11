@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="http://cdn.bootcss.com/echarts/3.3.2/echarts.min.js"></script>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+</head>
+
+<body data-type="widgets">
+    <script src="assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                </span>
+                </div>                
+            </div>
+
+        </header>
+        <!-- 风格切换 -->
+        <div class="tpl-skiner">
+            <div class="tpl-skiner-content">
+                <div class="tpl-skiner-content-bar">
+                    <span class="skiner-color skiner-white" data-color="theme-white"></span>
+                    <span class="skiner-color skiner-black" data-color="theme-black"></span>
+                </div>
+            </div>
+        </div>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-link">
+                    <a href="index.html" >
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首頁
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="tables.html">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i> 訂房系統
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="calendar.html">
+                        <i class="am-icon-calendar sidebar-nav-link-logo"></i> 訂房排程
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="keyInfo.html" class="active">
+                        <i class="am-icon-key sidebar-nav-link-logo"></i> 門鎖資料
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 内容区域 -->
+        <div class="tpl-content-wrapper">
+            <div class="row-content am-cf">
+                <div class="row">
+                    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                        <div class="widget am-cf">
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">大門鎖金鑰資訊</div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr" id="Door_Key_Data">
+                                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="Door_table">
+                                    <thead>
+                                        <tr>
+                                            <th>訂單編號</th>
+                                            <th>大門密碼</th>
+                                            <th>有效日期</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div  id="Door_Key_Option">
+                                <div class="widget-head am-cf">
+                                    <div class="widget-title am-fl">新增大門鎖鑰匙</div>
+                                </div>
+                                <div class="widget-body  widget-body-lg am-fr">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>訂單編號</th>
+                                                <th>大門密碼</th>
+                                                <th>有效起始日期</th>
+                                                <th>有效結束日期</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            <td><input type="text" style="color:black;" id="door_Id" placeholder="訂單編號"></td>
+                                            <td><input type="text" style="color:black;" id="door_Key" placeholder="大門密碼,格式:#{pwd}#"></td>
+                                            <td><input type="date" style="color:black;" id="door_BeginDate"></td>
+                                            <td><input type="date" style="color:black;" id="door_EndDate"></td>
+                                            <td> <button type="button"
+                                                class="am-btn am-btn-primary tpl-btn-bg-color-success " id="submit_DoorKey">新增</button></td>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="widget-head am-cf">
+                                <div class="widget-title am-fl">房間鎖金鑰資訊</div>
+                            </div>
+                            <div class="widget-body  widget-body-lg am-fr" id="Room_Key_Data">
+                                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black "  id="Room_table">
+                                    <thead>
+                                        <tr>
+                                            <th>訂單編號</th>
+                                            <th>房間密碼</th>
+                                            <th>有效日期</th>
+                                            <th>房間號碼</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="Room_Key_Option"> 
+                                <div class="widget-head am-cf" >
+                                    <div class="widget-title am-fl">新增房間鎖鑰匙</div>
+                                </div>
+                                <div class="widget-body  widget-body-lg am-fr" id="Room_Key_Option">
+                                    <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                                        <thead>
+                                            <tr>
+                                                <th>訂單編號</th>
+                                                <th>房間密碼</th>
+                                                <th>房號</th>
+                                                <th>有效起始日期</th>
+                                                <th>有效結束期限</th>
+                                                <th>操作</th>
+                                            </tr>
+                                            <td><input type="text" style="color:black;" id="room_Id" placeholder="訂單編號"></td>
+                                            <td><input type="text" style="color:black;" id="room_Key" placeholder="房間密碼,格式:#{pwd}#"></td>
+                                            <td><select  style="color:black;" id="room_type_select">
+                                                <option value=-1 selected="selected" >請選擇房號</option>
+                                            </select></td>
+                                            <td><input type="date" style="color:black;" id="room_BeginDate"></td>
+                                            <td><input type="date" style="color:black;" id="room_EndDate"></td>
+                                            <td> <button type="button"
+                                                class="am-btn am-btn-primary tpl-btn-bg-color-success " id="submit_RoomKey">新增</button></td>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="http://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="assets/js/amazeui.datatables.min.js"></script>
+    <script src="assets/js/dataTables.responsive.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/housekeeperService.js"></script>
+    <script src="assets/js/keyDataMgr.js"></script>
+</body>
+
+</html>

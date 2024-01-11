@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amaze UI Admin index Examples</title>
+    <meta name="description" content="这是一个 index 页面">
+    <meta name="keywords" content="index">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" href="assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    <script src="http://cdn.bootcss.com/echarts/3.3.2/echarts.min.js"></script>
+    <link rel="stylesheet" href="assets/css/amazeui.min.css" />
+    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css" />
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body data-type="widgets">
+    <script src="assets/js/theme.js"></script>
+    <div class="am-g tpl-g">
+        <!-- 头部 -->
+        <header>
+            <!-- logo -->
+            <div class="am-fl tpl-header-logo">
+                <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <!-- 右侧内容 -->
+            <div class="tpl-header-fluid">
+                <!-- 侧边切换 -->
+                <div class="am-fl tpl-header-switch-button am-icon-list">
+                    <span>
+
+                    </span>
+                </div>
+                <!-- 其它功能-->
+                <div class="am-fr tpl-header-navbar">
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+
+        </header>
+        <!-- 侧边导航栏 -->
+        <div class="left-sidebar">
+            <!-- 用户信息 -->
+            <div class="tpl-sidebar-user-panel">
+                <div class="tpl-user-panel-slide-toggleable">
+                    <div class="tpl-user-panel-profile-picture">
+                        <img src="assets/img/user04.png" alt="">
+                    </div>
+                    <span class="user-panel-logged-in-text">
+                        <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+                        禁言小张
+                    </span>
+                    <a href="javascript:;" class="tpl-user-panel-action-link"> <span class="am-icon-pencil"></span>
+                        账号设置</a>
+                </div>
+            </div>
+            <!-- 菜单 -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-nav-link">
+                    <a href="index.html">
+                        <i class="am-icon-home sidebar-nav-link-logo"></i> 首頁
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="tables.html"  class="active">
+                        <i class="am-icon-table sidebar-nav-link-logo"></i>訂房系統
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="calendar.html">
+                        <i class="am-icon-calendar sidebar-nav-link-logo"></i> 訂房排程
+                    </a>
+                </li>
+                <li class="sidebar-nav-link">
+                    <a href="keyInfo.html">
+                        <i class="am-icon-key sidebar-nav-link-logo"></i> 門鎖資料
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="row-content am-cf">
+            <div class="row">
+
+                <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+                    <div class="widget am-cf">
+                        <div class="widget-head am-cf">
+                            <div class="widget-title am-fl">新增訂單</div>
+                        </div>
+                        <div class="widget-body am-fr">
+
+                            <form class="am-form tpl-form-border-form">
+                                <div class="am-form-group">
+                                    <label for="user-name" class="am-u-sm-12 am-form-label am-text-left">房型選擇 <span
+                                            class="tpl-form-line-small-title">RoomType</span></label>
+                                    <div class="am-u-sm-12">
+                                        <div class="am-margin-top-xs">
+                                            <select data-am-selected="{searchBox: 1}" style="display: none;" id="roomType">
+                                                <option value=-1>選擇房型</option>
+                                 
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label for="user-email" class="am-u-sm-12 am-form-label am-text-left">入住日期 <span
+                                            class="tpl-form-line-small-title">Check In Time</span></label>
+                                    <div class="am-u-sm-12">
+                                        <input type="date" class="am-form-field tpl-form-no-bg am-margin-top-xs"
+                                            placeholder="入住日期"  id="checkInDate" >
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label for="user-email" class="am-u-sm-12 am-form-label am-text-left">退房時間 <span
+                                            class="tpl-form-line-small-title">Check Out Time</span></label>
+                                    <div class="am-u-sm-12">
+                                        <input type="date" class="am-form-field tpl-form-no-bg am-margin-top-xs"
+                                            placeholder="退房日期"  id="checkOutDate">
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label for="user-phone" class="am-u-sm-12 am-form-label am-text-left">人數</label>
+                                    <div class="am-u-sm-12">
+                                        <input type="number" id="NumberOfPeople" value="1" min="1" max="4">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label class="am-u-sm-12 am-form-label  am-text-left">金額 <span
+                                            class="tpl-form-line-small-title">$$</span></label>
+                                    <div class="am-u-sm-12">
+                                        <input type="text" class="tpl-form-input" id="RoomCost"
+                                                placeholder="請輸入金額">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
+                                    <label class="am-u-sm-12 am-form-label  am-text-left">額外說明</label>
+                                    <div class="am-u-sm-12">
+                                        <input type="text" class="tpl-form-input"  id="RoomExplain"
+                                                placeholder="額外說明">
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <label class="am-u-sm-12 am-form-label  am-text-left">完成付款</label>
+                                    <div class="am-u-sm-12">
+                                        <input type="checkbox" id="paid" value="paid">
+                                    </div>
+                                </div>
+                                <div class="am-form-group">
+                                    <div class="am-u-sm-12 am-u-sm-push-12">
+                                        <button type="button"
+                                            class="am-btn am-btn-primary tpl-btn-bg-color-success " id="submit_Order">送出訂單</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script src="http://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
+    <script src="assets/js/amazeui.datatables.min.js"></script>
+    <script src="assets/js/dataTables.responsive.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/housekeeperService.js"></script>
+    <script>
+
+        $('.left-sidebar').removeClass('active')
+        let RoomType
+        {
+
+        }
+        let now = new Date()
+        let day = now.getDate();
+        let month = now.getMonth() + 1;
+        let year = now.getFullYear();
+        let today = `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        let tomorrow = `${year}-${String(month).padStart(2, "0")}-${String(day + 1).padStart(2, "0")}`;
+        let checkInDate = document.getElementById("checkInDate")
+        let checkOutDate = document.getElementById("checkOutDate")
+        let roomTypeSelect = document.getElementById("roomType")
+        let roomCost = document.getElementById("RoomCost")
+        let numberOfPeople = document.getElementById("NumberOfPeople")
+        let checkPaid = document.getElementById("paid")
+        let roomExplain = document.getElementById("RoomExplain")
+        let submitBtn = document.getElementById("submit_Order")
+        let serviceMgr = new HousekeeperService()
+
+        if (!serviceMgr.isLogin())
+        {
+            //User沒有登入
+            window.location.href = "login.html";
+        }
+      
+
+        serviceMgr.getRoomSetting((statusCode, responseTxt) =>
+        {
+            if (statusCode == 200)
+            {
+
+                const roomSetting = JSON.parse(responseTxt)
+                console.log(roomSetting)
+                for (const [key, value] of Object.entries(roomSetting))
+                {
+                    console.log(key, value);
+
+                    let option = document.createElement("option");
+                    option.innerHTML = value;
+                    option.value = key
+                    roomTypeSelect.appendChild(option)
+                }
+            }
+            else
+            {
+              
+                window.alert("無法取得房間設定代號",responseTxt);
+                window.location.href = "login.html";
+            }
+        });
+
+        submitBtn.addEventListener("click", () =>
+        {
+            console.log("submit",serviceMgr)
+            if (checkOrder() == true)
+            {
+                let orderData = {
+                    "CheckInData": checkInDate.value,
+                    "CheckOutData": checkOutDate.value,
+                    "NumberOfPeople": Number(numberOfPeople.value),
+                    "Cost": Number(roomCost.value),
+                    "RoomExplain": roomExplain.value,
+                    "RoomType":Number(roomTypeSelect.value),
+                    "Paid": checkPaid.checked
+                }
+                serviceMgr.addOrder(orderData,(statusCode,responseTxt)=>{
+                    if(statusCode==200)
+                    {
+                        window.alert("新增訂單成功")
+                        window.location.reload()
+                    }
+                    else
+                    {
+                        window.alert(responseTxt) 
+                        if (statusCode==408)
+                        {
+                            //權限不足
+                            window.location.href = "login.html";
+                        }
+                    }
+                })
+            }
+        });
+        //檢查訂單資料
+        function checkOrder()
+        {
+            console.log("checkOrder")
+
+            if (checkInDate.value >= checkOutDate.value)
+            {
+                window.alert("退房時間不能早於訂房時間")
+                return false
+            }
+            if (Number(roomTypeSelect.value) === -1)
+            {
+                window.alert("還未選擇房型")
+                return false
+            }
+            return true
+
+        }
+    </script>
+</body>
+
+</html>
